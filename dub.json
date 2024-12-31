@@ -1,0 +1,21 @@
+{
+	"name": "ntropy",
+	"description": "Generate cryptographically secure pseudorandom numbers.",
+	"authors": ["Aya Partridge"],
+	"license": "BSL-1.0",
+	
+	"targetType": "staticLibrary",
+	"targetPath": "lib",
+	"targetName": "NTropy",
+	
+	"configurations": [
+		{
+			"name": "noBC",
+		},
+		{
+			"name": "yesBC",
+			"buildOptions": ["betterC"],
+		},
+	],
+	
+}
