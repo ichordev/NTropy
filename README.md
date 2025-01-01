@@ -12,7 +12,27 @@ import ntropy;
 
 auto myBuffer = new ubyte[](32);
 if(ntropy.generate(myBuffer)){
-	//use myBuffer
+	//use `myBuffer`
+}else{
+	//error detected!
+}
+```
+Generate a fixed amount of cryptographically secure random data:
+```d
+import ntropy;
+
+bool success;
+
+short[14] myData = ntropy.generate!(short[14])(success);
+if(success){
+	//use `myData`
+}else{
+	//error detected!
+}
+
+int myInt = ntropy.generate!int(success);
+if(success){
+	//use `myInt`
 }else{
 	//error detected!
 }
