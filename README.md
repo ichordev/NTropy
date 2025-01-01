@@ -33,7 +33,7 @@ if(ntropy.generate(myBuffer)){
 | `Hurd`                     | (unknown)              |[`getrandom`](https://www.gnu.org/software/libc/manual/html_mono/libc.html#index-getrandom)|
 | `Solaris`                  | 11.3                   |[`getrandom`](https://docs.oracle.com/cd/E88353_01/html/E37841/getrandom-2.html)|
 | `AIX`                      | (unknown)              |[`/dev/urandom`](https://www.ibm.com/docs/en/aix/7.3?topic=files-random-urandom-devices)|
-| `Haiku`                    | (unknown)              | `/dev/urandom` |
+| `Haiku`                    | R1/beta5               |[`arc4random_buf`](https://www.haiku-os.org/get-haiku/r1beta5/release-notes)|
 | `Cygwin`                   | 2.7.0                  |[`getrandom`](https://cygwin.com/cygwin-ug-net/ov-new.html#ov-new2.7)|
 
 Not all platforms have been tested. Pull requests to add new platforms, lower minimum system versions, or fix bugs are welcome.

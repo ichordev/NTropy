@@ -10,6 +10,7 @@ private{
 	//Use `arc4random_buf`
 	enum useARC4RandomBuf = (){
 		version(OpenBSD) return true;
+		else version(Haiku) return true;
 		else return false;
 	}();
 	
@@ -45,7 +46,6 @@ private{
 	//Use `/dev/urandom`.
 	enum useDevURandom = (){
 		version(AIX) return true;
-		else version(Haiku) return true;
 		else return false;
 	}();
 	
@@ -61,6 +61,7 @@ private{
 	}
 	
 	static if(useARC4RandomBuf){
+		version(Haiku) pragma(lib, "bsd");
 		extern(C) void arc4random_buf(void* buf, size_t nBytes) nothrow @nogc;
 	}
 	static if(useGetrandom){
